@@ -299,114 +299,36 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                      <ul class="sidebar-menu">
-                    <li>
-                        <a href="Home.jsp">
-                            <i class="fa fa-dashboard"></i> <span>Home</span>
+                   <li>
+                        <a href="View/AccountManager.jsp">
+                            <i class="fa fa-dashboard"></i> <span>Account Manager</span>
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="DashBoard.jsp">
+                    <li>
+                        <a href="View/AddAccount.jsp">
+                            <i class="fa fa-dashboard"></i> <span>Add account</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="View/DashBoard_1.jsp">
                             <i class="fa fa-dashboard"></i> <span>Dash board</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="Resgiter.jsp">
-                            <i class="fa fa-dashboard"></i> <span>Resgiter</span>
+                     <li>
+                        <a href="View/oderlist.jsp">
+                            <i class="fa fa-dashboard"></i> <span>Order</span>
                         </a>
                     </li>
                      <li>
-                        <a href="Login.jsp">
-                            <i class="fa fa-dashboard"></i> <span>Login</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="ChanePass.jsp">
-                            <i class="fa fa-dashboard"></i> <span>Change Pass Word</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="ViewProfile.jsp">
-                            <i class="fa fa-dashboard"></i> <span>View Profile</span>
-                        </a>
-                    </li>
-                     <li class="active">
-                        <a href="AccountDetails.jsp">
-                            <i class="fa fa-dashboard"></i> <span>Account Details</span>
-                        </a>
-                    </li>
-                     <li>
-                        <a href="ProductList.jsp">
-                            <i class="fa fa-dashboard"></i> <span>Product List</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="ProductDetatails.jsp">
-                            <i class="fa fa-dashboard"></i><span>Product Details</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="ProductSelect.jsp">
-                            <i class="fa fa-dashboard"></i><span>Product Select</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="ShoppingCart.jsp">
-                            <i class="fa fa-dashboard"></i> <span>Shopping Cart</span>
-                        </a>
-                    </li>
-                     <li>
-                        <a href="MyProductList.jsp">
-                            <i class="fa fa-dashboard"></i> <span>My Product List</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="MyProductDetails.jsp">
-                            <i class="fa fa-gavel"></i> <span>My product details</span>
-                        </a>
-                    </li>
-
-                    <li >
-                        <a href="MakeOderRequest.jsp">
-                            <i class="fa fa-globe"></i> <span>Make order request</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="MyRequestOrderList.jsp">
-                            <i class="fa fa-glass"></i> <span>My Request Order List</span>
-                        </a>
-                    </li>
-                     <li>
-                        <a href="MyRequestOrderDetail.jsp">
-                            <i class="fa fa-glass"></i> <span>My Request Order Detail</span>
-                        </a>
-                    </li>
-                     <li>
-                        <a href="pay.jsp">
-                            <i class="fa fa-glass"></i> <span>PAYMENT</span>
-                        </a>
-                    </li>
-                     <li >
-                        <a href="AccounManager.jsp">
-                            <i class="fa fa-glass"></i> <span>Account Manager</span>
-                        </a>
-                    </li>
-                     <li>
-                        <a href="AddAccount.jsp">
-                            <i class="fa fa-glass"></i> <span>Add Account</span>
-                        </a>
-                    </li>
-                     <li>
-                        <a href="oderlist.jsp">
-                            <i class="fa fa-glass"></i> <span>Order list </span>
-                        </a>
-                    </li>
-                     <li>
-                        <a href="oderdetails.jsp">
-                            <i class="fa fa-glass"></i> <span>Order Details </span>
+                        <a href="View/Addproduct.jsp">
+                            <i class="fa fa-dashboard"></i> <span>add product</span>
                         </a>
                     </li>
                     
+                    
+                                           
+
+                </ul>
                    
 
                 </ul>
