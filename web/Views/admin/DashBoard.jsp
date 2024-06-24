@@ -324,7 +324,11 @@
                             <i class="fa fa-dashboard"></i> <span>add product</span>
                         </a>
                     </li>
-                    
+                    <li>
+                        <a href="View/AccountManager.jsp">
+                            <i class="fa fa-dashboard" onclick="goToPage(1)"></i> <span>Account List Management</span>
+                        </a>
+                    </li>
                     
                                            
 
@@ -882,5 +886,14 @@
             });
             // Chart.defaults.global.responsive = true;
         </script>
+        <script>
+            function goToPage(PageNumber) {
+        // Thực hiện các hành động cần thiết khi chuyển đến trang pageNumber
+        // Ví dụ: chuyển đến URL mới, gọi hàm để load dữ liệu mới, ...
+        window.location.href = "your_new_page.jsp?page=" + pageNumber;
+        // Ví dụ: window.location.href = "your_new_page.jsp?page=" + pageNumber;
+    }
+        </script>
     </body>
+    
 </html>

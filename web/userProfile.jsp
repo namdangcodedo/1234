@@ -1,3 +1,10 @@
+<%-- 
+    Document   : cart
+    Created on : Jun 24, 2024, 11:18:30 PM
+    Author     : hoang
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -17,6 +24,178 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    
+    <style>
+
+.container-form {
+    width: 80%;
+    max-width: 1000px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.user-profile-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-section,
+.right-section {
+    width: 48%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group.half-width {
+    width: 48%;
+    display: inline-block;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+.avatar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.avatar a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.change-password {
+    color: #0066cc;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #005bb5;
+}
+
+/* Popup Form */
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+}
+
+.popup-content .form-group {
+    margin-bottom: 15px;
+}
+
+.popup-content .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.popup-content .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.popup-content button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup-content button[type="submit"]:hover {
+    background-color: #005bb5;
+}
+
+.popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+    </style>
 </head>
 
 <body>
@@ -203,22 +382,6 @@
     </div>
 
     <header id="header" class="site-header">
-
-        <div class="top-info border-bottom d-none d-md-block">
-            <div class="container-fluid">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <p class="fs-6 my-2 text-center">Need any help? Call us <a href="#">112233344455</a></p>
-                    </div>
-                    <div class="col-md-4 border-start border-end">
-                        <p class="fs-6 my-2 text-center">Summer sale discount off 60% off! <a class="text-decoration-underline" href="shop.html">Shop Now</a></p>
-                    </div>
-                    <div class="col-md-4">
-                        <p class="fs-6 my-2 text-center">2-3 business days delivery & free returns</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <nav id="header-nav" class="navbar navbar-expand-lg py-3">
             <div class="container">
@@ -463,452 +626,103 @@
             <div class="container">
                 <div class="row">
                     <div class="text-center">
-                        <h1>Cart</h1>
+                        <h1>User Profile</h1>
                         <div class="breadcrumbs">
                             <span class="item">
                   <a href="index.html">Home > </a>
                 </span>
-                            <span class="item text-decoration-underline">Cart</span>
+                            <span class="item text-decoration-underline">User Profile</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="cart padding-large">
-        <div class="container">
-            <div class="row">
-                <div class="cart-table">
-                    <div class="cart-header border-bottom border-top">
-                        <div class="row d-flex text-capitalize">
-                            <h4 class="col-lg-4 py-3 m-0">Product</h4>
-                            <h4 class="col-lg-3 py-3 m-0">Quantity</h4>
-                            <h4 class="col-lg-4 py-3 m-0">Subtotal</h4>
-                        </div>
+    
+    <div class="container-form">
+        <h1>User Profile</h1>
+        <form class="user-profile-form">
+            <div class="left-section">
+                <div class="avatar-group">
+                    <label>Avatar</label>
+                    <div class="avatar">
+                        <img src="images/review-image2.jpg" alt="avatar"/>
+                        <a href="#">Change</a>
                     </div>
-
-                    <div class="cart-item border-bottom padding-small">
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-md-3">
-                                <div class="cart-info d-flex gap-2 flex-wrap align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="card-image">
-                                            <img src="images/cart-item1.png" alt="cart-img" class="img-fluid border rounded-3">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="card-detail">
-                                            <h5 class="mt-2"><a href="single-product.html">The Emerald Crown</a></h5>
-                                            <div class="card-price">
-                                                <span class="price text-primary fw-light" data-currency-usd="$2000.00">$2000.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-7">
-                                <div class="row d-flex">
-                                    <div class="col-md-6">
-                                        <div class="product-quantity my-2 my-2">
-                                            <div class="input-group product-qty align-items-center" style="max-width: 150px;">
-                                                <span class="input-group-btn">
-                            <button type="button" class="bg-white shadow border rounded-3 fw-light quantity-left-minus"
-                              data-type="minus" data-field="">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                                                <input type="text" id="quantity" name="quantity" class="form-control bg-white shadow border rounded-3 py-2 mx-2 input-number text-center" value="1" min="1" max="100" required>
-                                                <span class="input-group-btn">
-                            <button type="button" class="bg-white shadow border rounded-3 fw-light quantity-right-plus"
-                              data-type="plus" data-field="">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="total-price">
-                                            <span class="money fs-2 fw-light text-primary">$2000.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-1 col-md-2">
-                                <div class="cart-cross-outline">
-                                    <a href="#">
-                      <svg class="cart-cross-outline" width="38" height="38">
-                        <use xlink:href="#cart-cross-outline"></use>
-                      </svg>
-                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart-item border-bottom padding-small">
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-md-3">
-                                <div class="cart-info d-flex gap-2 flex-wrap align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="card-image">
-                                            <img src="images/cart-item2.png" alt="cart-img" class="img-fluid border rounded-3">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="card-detail">
-                                            <h5 class="mt-2"><a href="single-product.html">The Last Enchantment</a></h5>
-                                            <div class="card-price">
-                                                <span class="price text-primary fw-light" data-currency-usd="$2000.00">$400.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-7">
-                                <div class="row d-flex">
-                                    <div class="col-lg-6">
-                                        <div class="product-quantity my-2">
-                                            <div class="input-group product-qty align-items-center" style="max-width: 150px;">
-                                                <span class="input-group-btn">
-                            <button type="button" class="bg-white shadow border rounded-3 fw-light quantity-left-minus"
-                              data-type="minus" data-field="">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                                                <input type="text" id="quantity" name="quantity" class="form-control bg-white shadow border rounded-3 py-2 mx-2 input-number text-center" value="1" min="1" max="100" required>
-                                                <span class="input-group-btn">
-                            <button type="button" class="bg-white shadow border rounded-3 fw-light quantity-right-plus"
-                              data-type="plus" data-field="">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="total-price">
-                                            <span class="money fs-2 fw-light text-primary">$400.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-1 col-md-2">
-                                <div class="cart-cross-outline">
-                                    <a href="#">
-                      <svg class="cart-cross-outline" width="38" height="38">
-                        <use xlink:href="#cart-cross-outline"></use>
-                      </svg>
-                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-totals padding-medium pb-0">
-                    <h3 class="mb-3">Cart Totals</h3>
-                    <div class="total-price pb-3">
-                        <table cellspacing="0" class="table text-capitalize">
-                            <tbody>
-                                <tr class="subtotal pt-2 pb-2 border-top border-bottom">
-                                    <th>Subtotal</th>
-                                    <td data-title="Subtotal">
-                                        <span class="price-amount amount text-primary ps-5 fw-light">
-                        <bdi>
-                          <span class="price-currency-symbol">$</span>2,400.00
-                                        </bdi>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr class="order-total pt-2 pb-2 border-bottom">
-                                    <th>Total</th>
-                                    <td data-title="Total">
-                                        <span class="price-amount amount text-primary ps-5 fw-light">
-                        <bdi>
-                          <span class="price-currency-symbol">$</span>2,400.00</bdi>
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="button-wrap d-flex flex-wrap gap-3">
-                        <button class="btn">Update Cart</button>
-                        <button class="btn">Continue Shopping</button>
-                        <button class="btn">Proceed to checkout</button>
-                    </div>
+                    <a href="#" class="change-password" id="change-password-link">Change Password</a>
                 </div>
             </div>
+            <div class="right-section">
+                <div class="form-group half-width">
+                    <label for="full-name">Full name*</label>
+                    <input type="text" id="full-name" name="full-name">
+                </div>
+                <div class="form-group half-width">
+                    <label for="user-name">User Name*</label>
+                    <input type="text" id="user-name" name="user-name">
+                </div>
+                <div class="form-group half-width">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group half-width">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" id="mobile" name="mobile">
+                </div>
+                <div class="form-group full-width">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address">
+                </div>
+                <div class="form-group half-width">
+                    <label for="city-province">City/Province</label>
+                    <select id="city-province" name="city-province">
+                        <option>City/Province</option>
+                    </select>
+                </div>
+                <div class="form-group half-width">
+                    <label for="district">District</label>
+                    <select id="district" name="district">
+                        <option>District</option>
+                    </select>
+                </div>
+                <div class="form-group half-width">
+                    <label for="wards">Wards</label>
+                    <select id="wards" name="wards">
+                        <option>Wards</option>
+                    </select>
+                </div>
+                <div class="form-group half-width">
+                    <label for="user-role">User Role</label>
+                    <input type="text" id="user-role" name="user-role">
+                </div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Popup Form -->
+    <div id="popup-form" class="popup-form">
+        <div class="popup-content">
+            <span class="close" id="close-popup">&times;</span>
+            <h2>Change Password</h2>
+            <form id="change-password-form">
+                <div class="form-group">
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password" name="current-password">
+                </div>
+                <div class="form-group">
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" name="new-password">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                </div>
+                <button type="submit">Change Password</button>
+            </form>
         </div>
-    </section>
-
-    <section id="customers-reviews" class="position-relative padding-large" style="background-image: url(images/banner-image-bg.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 600px;">
-        <div class="container offset-md-3 col-md-6 ">
-            <div class="position-absolute top-50 end-0 pe-0 pe-xxl-5 me-0 me-xxl-5 swiper-next testimonial-button-next">
-                <svg class="chevron-forward-circle d-flex justify-content-center align-items-center p-2" width="80" height="80">
-            <use xlink:href="#alt-arrow-right-outline"></use>
-          </svg>
-            </div>
-            <div class="position-absolute top-50 start-0 ps-0 ps-xxl-5 ms-0 ms-xxl-5 swiper-prev testimonial-button-prev">
-                <svg class="chevron-back-circle d-flex justify-content-center align-items-center p-2" width="80" height="80">
-            <use xlink:href="#alt-arrow-left-outline"></use>
-          </svg>
-            </div>
-            <div class="section-title mb-4 text-center">
-                <h3 class="mb-4">Customers reviews</h3>
-            </div>
-            <div class="swiper testimonial-swiper ">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="card position-relative text-left p-5 border rounded-3">
-                            <blockquote>"I stumbled upon this bookstore while visiting the city, and it instantly became my favorite spot. The cozy atmosphere, friendly staff, and wide selection of books make every visit a delight!"</blockquote>
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                            </div>
-                            <h5 class="mt-1 fw-normal">Emma Chamberlin</h5>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card position-relative text-left p-5 border rounded-3">
-                            <blockquote>"As an avid reader, I'm always on the lookout for new releases, and this bookstore never disappoints. They always have the latest titles, and their recommendations have introduced me to some incredible reads!"</blockquote>
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                            </div>
-                            <h5 class="mt-1 fw-normal">Thomas John</h5>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card position-relative text-left p-5 border rounded-3">
-                            <blockquote>"I ordered a few books online from this store, and I was impressed by the quick delivery and careful packaging. It's clear that they prioritize customer satisfaction, and I'll definitely be shopping here again!"</blockquote>
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                            </div>
-                            <h5 class="mt-1 fw-normal">Kevin Bryan</h5>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card position-relative text-left p-5 border rounded-3">
-                            <blockquote>“I stumbled upon this tech store while searching for a new laptop, and I couldn't be happier with my experience! The staff was incredibly knowledgeable and guided me through the process of choosing the perfect device for my
-                                needs. Highly recommended!”</blockquote>
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                            </div>
-                            <h5 class="mt-1 fw-normal">Stevin</h5>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card position-relative text-left p-5 border rounded-3">
-                            <blockquote>“I stumbled upon this tech store while searching for a new laptop, and I couldn't be happier with my experience! The staff was incredibly knowledgeable and guided me through the process of choosing the perfect device for my
-                                needs. Highly recommended!”</blockquote>
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                                <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                            </div>
-                            <h5 class="mt-1 fw-normal">Roman</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="latest-posts" class="padding-large">
-        <div class="container">
-            <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
-                <h3 class="d-flex align-items-center">Latest posts</h3>
-                <a href="shop.html" class="btn">View All</a>
-            </div>
-            <div class="row">
-                <div class="col-md-3 posts mb-4">
-                    <img src="images/post-item1.jpg" alt="post image" class="img-fluid rounded-3">
-                    <a href="blog.html" class="fs-6 text-primary">Books</a>
-                    <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">10 Must-Read Books of the Year: Our Top Picks!</a></h4>
-                    <p class="mb-2">Dive into the world of cutting-edge technology with our latest blog post, where we highlight five essential gadg <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span>
-                    </p>
-                </div>
-                <div class="col-md-3 posts mb-4">
-                    <img src="images/post-item2.jpg" alt="post image" class="img-fluid rounded-3">
-                    <a href="blog.html" class="fs-6 text-primary">Books</a>
-                    <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">The Fascinating Realm of Science Fiction</a></h4>
-                    <p class="mb-2">Explore the intersection of technology and sustainability in our latest blog post. Learn about the innovative <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span> </p>
-                </div>
-                <div class="col-md-3 posts mb-4">
-                    <img src="images/post-item3.jpg" alt="post image" class="img-fluid rounded-3">
-                    <a href="blog.html" class="fs-6 text-primary">Books</a>
-                    <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">Finding Love in the Pages of a Book</a></h4>
-                    <p class="mb-2">Stay ahead of the curve with our insightful look into the rapidly evolving landscape of wearable technology. <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span>
-                    </p>
-                </div>
-                <div class="col-md-3 posts mb-4">
-                    <img src="images/post-item4.jpg" alt="post image" class="img-fluid rounded-3">
-                    <a href="blog.html" class="fs-6 text-primary">Books</a>
-                    <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">Reading for Mental Health: How Books Can Heal and Inspire</a></h4>
-                    <p class="mb-2">In today's remote work environment, productivity is key. Discover the top apps and tools that can help you stay <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="instagram">
-        <div class="container">
-            <div class="text-center mb-4">
-                <h3>Instagram</h3>
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                    <use xlink:href="#instagram"></use>
-                  </svg>
-                            </div>
-                            <img src="images/insta-item1.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                    <use xlink:href="#instagram"></use>
-                  </svg>
-                            </div>
-                            <img src="images/insta-item2.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                    <use xlink:href="#instagram"></use>
-                  </svg>
-                            </div>
-                            <img src="images/insta-item3.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                    <use xlink:href="#instagram"></use>
-                  </svg>
-                            </div>
-                            <img src="images/insta-item4.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                    <use xlink:href="#instagram"></use>
-                  </svg>
-                            </div>
-                            <img src="images/insta-item5.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                    <use xlink:href="#instagram"></use>
-                  </svg>
-                            </div>
-                            <img src="images/insta-item6.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    </div>
+    
     <footer id="footer" class="padding-large">
         <div class="container">
             <div class="row">
@@ -1052,3 +866,20 @@
 </body>
 
 </html>
+<script>
+    document.getElementById('change-password-link').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('popup-form').style.display = 'flex';
+});
+
+document.getElementById('close-popup').addEventListener('click', function() {
+    document.getElementById('popup-form').style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target === document.getElementById('popup-form')) {
+        document.getElementById('popup-form').style.display = 'none';
+    }
+});
+
+</script>

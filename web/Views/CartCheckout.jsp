@@ -1,3 +1,10 @@
+<%-- 
+    Document   : CartCheckout
+    Created on : Jun 24, 2024, 10:36:02 PM
+    Author     : Admin
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -12,11 +19,184 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <style>
+            .swiper-slide {
+                width: 300px;  /* Chiều rộng cố định cho mỗi slide */
+                height: 300px; /* Chiều cao cố định, giống như chiều rộng */
+                margin: auto;  /* Căn giữa slide trong swiper container */
+            }
+
+            .card {
+                width: 100%;   /* Chiều rộng card sẽ tự động điều chỉnh theo swiper-slide */
+                height: 100%;  /* Chiều cao card sẽ tự động điều chỉnh theo swiper-slide */
+                display: flex;
+                flex-direction: column; /* Sắp xếp nội dung của card theo chiều dọc */
+                justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+                align-items: center;     /* Căn giữa nội dung theo chiều ngang */
+            }
+            .items-list {
+                display: flex;
+                flex-direction: row; /* Thiết lập hướng ngang */
+                flex-wrap: nowrap; /* Không cho phép xuống hàng */
+                justify-content: space-between; /* Căn chỉnh khoảng cách giữa các mục */
+                overflow-x: auto; /* Cho phép cuộn ngang nếu các mục vượt quá chiều rộng của màn hình */
+            }
+
+            .item {
+                flex: 0 0 auto; /* Các mục không co giãn và không chiếm toàn bộ không gian */
+                margin-right: 20px; /* Khoảng cách giữa các mục */
+            }
+
+
+            .item img {
+                width: 100px; /* Đặt chiều rộng cố định cho hình ảnh */
+                height: auto; /* Đảm bảo hình ảnh không bị méo */
+                margin-right: 10px; /* Khoảng cách giữa hình ảnh và nội dung bên cạnh */
+            }
+
+            .item-content {
+                flex-grow: 1; /* Cho phép nội dung mở rộng để chiếm đầy đủ không gian còn lại */
+            }
+
+            hr.gray-400 {
+                width: 100%; /* Đảm bảo thanh ngăn cách chiếm toàn bộ chiều rộng */
+                border: none; /* Ẩn thanh ngăn cách nếu không cần thiết */
+                clear: both; /* Đảm bảo không có phần tử nào nằm ngang với thanh ngăn cách */
+            }
+            .swiper-container { /* Hoặc tên lớp container của swiper */
+                display: flex;
+                justify-content: center; /* Căn giữa các slides theo chiều ngang */
+                align-items: center; /* Căn giữa các slides theo chiều dọc nếu cần */
+                width: 100%; /* Đảm bảo container chiếm toàn bộ chiều rộng của phần tử cha */
+            }
+
+            .swiper-wrapper {
+                width: auto; /* Hoặc đặt chiều rộng cụ thể nếu bạn muốn giới hạn kích thước của slider */
+                display: flex;
+                align-items: center; /* Căn giữa các slides theo chiều dọc */
+            }
+
+            .cart-checkout {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                font-family: Arial, sans-serif;
+            }
+
+            .shopping-cart, .delivery-details {
+                border: 1px solid #ccc;
+                padding: 20px;
+                width: 48%;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+
+            table th, table td {
+                border: 1px solid #ccc;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .payment-method label {
+                display: block;
+            }
+
+            .payment-method input[type="radio"] {
+                margin-right: 5px;
+            }
+
+            .totals p {
+                margin: 5px 0;
+            }
+
+            button {
+                padding: 10px;
+                background-color: #007BFF;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+            form > label {
+                display: block;
+            }
+
+            form > input, form > select, form > textarea {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                margin-bottom: 20px;
+            }
+
+            form > textarea {
+                height: 100px;
+            }
+
+            .form-row {
+                display: flex;
+                align-items: center; /* Căn giữa các mục theo chiều dọc */
+                justify-content: space-between; /* Phân bố khoảng cách đều giữa các phần tử */
+                flex-wrap: wrap; /* Cho phép các mục bọc nếu không đủ không gian */
+            }
+
+            .form-row label {
+                margin-right: 10px; /* Thêm khoảng cách giữa label và input/select */
+            }
+
+            .form-row input,
+            .form-row select {
+                flex-grow: 1; /* Cho phép input/select mở rộng để chiếm đầy không gian còn lại */
+                min-width: 160px; /* Đặt chiều rộng tối thiểu cho input/select */
+            }
+            .form-group {
+                display: flex;
+                flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+                margin-bottom: 10px; /* Thêm khoảng cách giữa các nhóm */
+            }
+
+            .form-group label {
+                margin-bottom: 5px; /* Thêm khoảng cách giữa label và input */
+            }
+
+table {
+    width: 100%; /* Cho bảng chiếm đầy độ rộng của container */
+    border-collapse: collapse; /* Loại bỏ khoảng cách giữa các border của các cell */
+}
+
+td {
+    padding: 8px; /* Thêm padding cho mỗi cell */
+}
+
+input[type="text"], input[type="email"], select, textarea {
+    width: 100%; /* Để input và select chiếm đầy độ rộng của cell */
+    box-sizing: border-box; /* Bao gồm padding và border vào width */
+}
+
+.right-align-button {
+    display: block;
+    margin-top: 10px;
+    float: right; /* Đẩy nút submit về phía bên phải */
+}
+
+
+        </style>
     </head>
 
     <body>
@@ -114,22 +294,9 @@
         <path
             d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
     </symbol>
-    <symbol xmlns="http://www.w3.org/2000/svg" id="cart-cross-outline" viewBox="0 0 24 24">
-        <path fill="currentColor"
-              d="M12.03 8.97a.75.75 0 1 0-1.06 1.06l.97.97l-.97.97a.75.75 0 1 0 1.06 1.06l.97-.97l.97.97a.75.75 0 1 0 1.06-1.06l-.97-.97l.97-.97a.75.75 0 1 0-1.06-1.06l-.97.97z" />
-        <path fill="currentColor" fill-rule="evenodd"
-              d="M1.293 2.751a.75.75 0 0 1 .956-.459l.301.106c.617.217 1.14.401 1.553.603c.44.217.818.483 1.102.899c.282.412.399.865.452 1.362l.011.108H17.12c.819 0 1.653 0 2.34.077c.35.039.697.101 1.003.209c.3.105.631.278.866.584c.382.496.449 1.074.413 1.66c-.035.558-.173 1.252-.338 2.077l-.01.053l-.002.004l-.508 2.47c-.15.726-.276 1.337-.439 1.82c-.172.51-.41.96-.837 1.308c-.427.347-.916.49-1.451.556c-.505.062-1.13.062-1.87.062H10.88c-1.345 0-2.435 0-3.293-.122c-.897-.127-1.65-.4-2.243-1.026c-.547-.576-.839-1.188-.985-2.042c-.137-.8-.15-1.848-.15-3.3V7.038c0-.74-.002-1.235-.043-1.615c-.04-.363-.109-.545-.2-.677c-.087-.129-.22-.25-.524-.398c-.323-.158-.762-.314-1.43-.549l-.26-.091a.75.75 0 0 1-.46-.957M5.708 6.87v2.89c0 1.489.018 2.398.13 3.047c.101.595.274.925.594 1.263c.273.288.65.472 1.365.573c.74.105 1.724.107 3.14.107h5.304c.799 0 1.33-.001 1.734-.05c.382-.047.56-.129.685-.231c.125-.102.24-.26.364-.625c.13-.385.238-.905.4-1.688l.498-2.42v-.002c.178-.89.295-1.482.322-1.926c.026-.421-.04-.569-.101-.65a.561.561 0 0 0-.177-.087a3.17 3.17 0 0 0-.672-.134c-.595-.066-1.349-.067-2.205-.067zM5.25 19.5a2.25 2.25 0 1 0 4.5 0a2.25 2.25 0 0 0-4.5 0m2.25.75a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5m6.75-.75a2.25 2.25 0 1 0 4.5 0a2.25 2.25 0 0 0-4.5 0m2.25.75a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5"
-              clip-rule="evenodd" />
-    </symbol>
     <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
         <path
             d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
-    </symbol>
-    <symbol xmlns="http://www.w3.org/2000/svg" id="plus" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M19 11h-6V5a1 1 0 0 0-2 0v6H5a1 1 0 0 0 0 2h6v6a1 1 0 0 0 2 0v-6h6a1 1 0 0 0 0-2Z" />
-    </symbol>
-    <symbol xmlns="http://www.w3.org/2000/svg" id="minus" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M19 11H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2Z" />
     </symbol>
     </svg>
 
@@ -204,21 +371,6 @@
 
     <header id="header" class="site-header">
 
-        <div class="top-info border-bottom d-none d-md-block">
-            <div class="container-fluid">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <p class="fs-6 my-2 text-center">Need any help? Call us <a href="#">112233344455</a></p>
-                    </div>
-                    <div class="col-md-4 border-start border-end">
-                        <p class="fs-6 my-2 text-center">Summer sale discount off 60% off! <a class="text-decoration-underline" href="shop.html">Shop Now</a></p>
-                    </div>
-                    <div class="col-md-4">
-                        <p class="fs-6 my-2 text-center">2-3 business days delivery & free returns</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <nav id="header-nav" class="navbar navbar-expand-lg py-3">
             <div class="container">
@@ -240,7 +392,7 @@
                     <div class="offcanvas-body">
                         <ul id="navbar" class="navbar-nav text-uppercase justify-content-start justify-content-lg-center align-items-start align-items-lg-center flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link me-4" href="index.html">Home</a>
+                                <a class="nav-link me-4 active" href="index.html">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link me-4" href="about.html">About</a>
@@ -250,6 +402,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link me-4" href="blog.html">Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Views/admin/DashBoard.jsp" onclick="goToPage(1)">Admin</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link me-4 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pages</a>
@@ -271,7 +426,7 @@
                                                 class="badge bg-primary">Pro</span></a>
                                     </li>
                                     <li>
-                                        <a href="checkout.html" class="dropdown-item active fw-light">Checkout <span
+                                        <a href="checkout.html" class="dropdown-item fw-light">Checkout <span
                                                 class="badge bg-primary">Pro</span></a>
                                     </li>
                                     <li>
@@ -288,9 +443,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-4" href="contact.html">Contact</a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link text-decoration-underline me-4" href="https://templatesjungle.gumroad.com/l/bookly-bookstore-ecommerce-bootstrap-html-css-website-template" target="_blank">Get Pro</a>
                             </li>
@@ -344,18 +497,40 @@
                                                             </div>
                                                             <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
                                                                 <div class="form-group py-3">
-                                                                    <label class="mb-2" for="register">Your email address *</label>
-                                                                    <input type="text" minlength="2" name="username" placeholder="Your Email Address" class="form-control w-100 rounded-3 p-3" required>
+                                                                    <label class="mb-2" for="username">Your user name *</label>
+                                                                    <input type="text" minlength="2" name="username" placeholder="Your user name" class="form-control w-100 rounded-3 p-3" required>
                                                                 </div>
+
+                                                                <div class="form-group py-3">
+                                                                    <label class="mb-2" for="account">Your account *</label>
+                                                                    <input type="text" minlength="2" name="account" placeholder="Your account" class="form-control w-100 rounded-3 p-3" required>
+                                                                </div>
+
+                                                                <div class="form-group py-3">
+                                                                    <label class="mb-2" for="email">Your email address *</label>
+                                                                    <input type="email" minlength="2" name="email" placeholder="Your email address" class="form-control w-100 rounded-3 p-3" required>
+                                                                </div>
+
+                                                                <div class="form-group py-3">
+                                                                    <label class="mb-2" for="phone">Your phone number *</label>
+                                                                    <input type="tel" minlength="2" name="phone" placeholder="Your phone number" class="form-control w-100 rounded-3 p-3" required>
+                                                                </div>
+
+                                                                <div class="form-group py-3">
+                                                                    <label class="mb-2" for="address">Your address *</label>
+                                                                    <input type="text" minlength="2" name="address" placeholder="Your address" class="form-control w-100 rounded-3 p-3" required>
+                                                                </div>
+
+                                                                <div class="form-group py-3">
+                                                                    <label class="mb-2" for="password">Password *</label>
+                                                                    <input type="password" minlength="2" name="password" placeholder="Password" class="form-control w-100 rounded-3 p-3" required>
+                                                                </div>
+
                                                                 <div class="form-group pb-3">
-                                                                    <label class="mb-2" for="sign-in">Password *</label>
-                                                                    <input type="password" minlength="2" name="password" placeholder="Your Password" class="form-control w-100 rounded-3 p-3" required>
+                                                                    <label class="mb-2" for="confirm-password">Password again *</label>
+                                                                    <input type="password" minlength="2" name="confirm-password" placeholder="Password again" class="form-control w-100 rounded-3 p-3" required>
                                                                 </div>
-                                                                <label class="py-3">
-                                                                    <input type="checkbox" required="" class="d-inline">
-                                                                    <span class="label-body">I agree to the <a href="#" class="fw-bold">Privacy
-                                                                            Policy</a></span>
-                                                                </label>
+
                                                                 <button type="submit" name="submit" class="btn btn-dark w-100 my-3">Register</button>
                                                             </div>
                                                         </div>
@@ -458,231 +633,102 @@
 
     </header>
 
-    <section class="hero-section position-relative padding-large" style="background-image: url(images/banner-image-bg-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 400px;">
-        <div class="hero-content">
-            <div class="container">
-                <div class="row">
-                    <div class="text-center">
-                        <h1>Checkout</h1>
-                        <div class="breadcrumbs">
-                            <span class="item">
-                                <a href="index.html">Home > </a>
-                            </span>
-                            <span class="item text-decoration-underline">Checkout</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <aside class="right-side"style="width: 85%; height: 600px; margin: auto; overflow-y: auto; margin-top: 100px;" >
 
-    <section class="checkout-wrap padding-large">
-        <div class="container">
-            <form class="form-group">
-                <div class="row d-flex flex-wrap">
-                    <div class="col-lg-6">
-                        <h3 class="mb-3">Billing Details</h3>
-                        <div class="billing-details">
-                            <label for="fname">First Name*</label>
-                            <input type="text" id="fname" name="firstname" class="form-control mt-2 mb-4 ps-3">
-                            <label for="lname">Last Name*</label>
-                            <input type="text" id="lname" name="lastname" class="form-control mt-2 mb-4 ps-3">
-                            <label for="cname">Company Name(optional)*</label>
-                            <input type="text" id="cname" name="companyname" class="form-control mt-2 mb-4">
-                            <label for="cname">Country / Region*</label>
-                            <select class="form-select form-control mt-2 mb-4" aria-label="Default select example">
-                                <option selected="" hidden="">United States</option>
-                                <option value="1">UK</option>
-                                <option value="2">Australia</option>
-                                <option value="3">Canada</option>
-                            </select>
-                            <label for="address">Street Address*</label>
-                            <input type="text" id="adr" name="address" placeholder="House number and street name" class="form-control mt-3 ps-3 mb-3">
-                            <input type="text" id="adr" name="address" placeholder="Appartments, suite, etc." class="form-control ps-3 mb-4">
-                            <label for="city">Town / City *</label>
-                            <input type="text" id="city" name="city" class="form-control mt-3 ps-3 mb-4">
-                            <label for="state">State *</label>
-                            <select class="form-select form-control mt-2 mb-4" aria-label="Default select example">
-                                <option selected="" hidden="">Florida</option>
-                                <option value="1">New York</option>
-                                <option value="2">Chicago</option>
-                                <option value="3">Texas</option>
-                                <option value="3">San Jose</option>
-                                <option value="3">Houston</option>
-                            </select>
-                            <label for="zip">Zip Code *</label>
-                            <input type="text" id="zip" name="zip" class="form-control mt-2 mb-4 ps-3">
-                            <label for="email">Phone *</label>
-                            <input type="text" id="phone" name="phone" class="form-control mt-2 mb-4 ps-3">
-                            <label for="email">Email address *</label>
-                            <input type="text" id="email" name="email" class="form-control mt-2 mb-4 ps-3">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div>
-                            <h3 class="mb-3">Additional Information</h3>
-                            <div class="billing-details">
-                                <label for="fname">Order notes (optional)</label>
-                                <textarea class="form-control pt-3 pb-3 ps-3 mt-2" placeholder="Notes about your order. Like special notes for delivery."></textarea>
-                            </div>
-                        </div>
-
-                        <div class="cart-totals padding-medium pb-0">
-                            <h3 class="mb-3">Cart Totals</h3>
-                            <div class="total-price pb-3">
-                                <table cellspacing="0" class="table text-capitalize">
-                                    <tbody>
-                                        <tr class="subtotal pt-2 pb-2 border-top border-bottom">
-                                            <th>Subtotal</th>
-                                            <td data-title="Subtotal">
-                                                <span class="price-amount amount text-primary ps-5 fw-light">
-                                                    <bdi>
-                                                        <span class="price-currency-symbol">$</span>2,400.00
-                                                    </bdi>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr class="order-total pt-2 pb-2 border-bottom">
-                                            <th>Total</th>
-                                            <td data-title="Total">
-                                                <span class="price-amount amount text-primary ps-5 fw-light">
-                                                    <bdi>
-                                                        <span class="price-currency-symbol">$</span>2,400.00</bdi>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="list-group">
-                                <label class="list-group-item d-flex gap-2 border-0">
-                                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
-                                           id="listGroupRadios1" value="" checked>
-                                    <span>
-                                        <p class="mb-1">Direct bank transfer</p>
-                                        <small>Make your payment directly into our bank account. Please use your Order ID. Your order will
-                                            shipped after funds have cleared in our account.</small>
-                                    </span>
-                                </label>
-                                <label class="list-group-item d-flex gap-2 border-0">
-                                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
-                                           id="listGroupRadios2" value="">
-                                    <span>
-                                        <p class="mb-1">Check payments</p>
-                                        <small>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store
-                                            Postcode.</small>
-                                    </span>
-                                </label>
-                                <label class="list-group-item d-flex gap-2 border-0">
-                                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
-                                           id="listGroupRadios3" value="">
-                                    <span>
-                                        <p class="mb-1">Cash on delivery</p>
-                                        <small>Pay with cash upon delivery.</small>
-                                    </span>
-                                </label>
-                                <label class="list-group-item d-flex gap-2 border-0">
-                                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
-                                           id="listGroupRadios3" value="">
-                                    <span>
-                                        <p class="mb-1">Paypal</p>
-                                        <small>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</small>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="button-wrap mt-3">
-                                <a href="banking.jsp" class="btn">Place an order</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <section id="instagram">
-        <div class="container">
-            <div class="text-center mb-4">
-                <h3>Instagram</h3>
-            </div>
+        <!-- Main content -->
+        <section class="content">
             <div class="row">
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                                <use xlink:href="#instagram"></use>
-                                </svg>
-                            </div>
-                            <img src="images/insta-item1.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                                <use xlink:href="#instagram"></use>
-                                </svg>
-                            </div>
-                            <img src="images/insta-item2.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                                <use xlink:href="#instagram"></use>
-                                </svg>
-                            </div>
-                            <img src="images/insta-item3.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                                <use xlink:href="#instagram"></use>
-                                </svg>
-                            </div>
-                            <img src="images/insta-item4.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                                <use xlink:href="#instagram"></use>
-                                </svg>
-                            </div>
-                            <img src="images/insta-item5.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-md-2">
-                    <figure class="instagram-item position-relative rounded-3">
-                        <a href="https://templatesjungle.com/" class="image-link position-relative">
-                            <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                <svg class="instagram">
-                                <use xlink:href="#instagram"></use>
-                                </svg>
-                            </div>
-                            <img src="images/insta-item6.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
-                        </a>
-                    </figure>
+
+
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="cart-checkout">
+                    <div class="shopping-cart">
+                        <h2>Shopping Cart</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Sub Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Product Name1, 1 products</td>
+                                    <td>3.101.000đ</td>
+                                </tr>
+                                <tr>
+                                    <td>Product Name4, 2 products</td>
+                                    <td>49.800đ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="payment-method">
+                            <p>Payment Method</p>
+                            <label><input type="radio" name="payment" value="COD"> COD</label>
+                            <label><input type="radio" name="payment" value="Bank Transfer"> Bank Transfer</label>
+                            <label><input type="radio" name="payment" value="Internet Banking"> Internet Banking</label>
+                        </div>
+                        <div class="totals">
+                            <p>Sub Total: 3.150.800 VND</p>
+                            <p>Shipping Free: 25.000 VND</p>
+                            <p>Sub Total: 3.175.800 VND</p>
+                        </div>
+
+                    </div>
+                    <div class="delivery-details">
+                        <h2>Delivery Details</h2>
+                        <form>
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="fullname">Full name*</label></td>
+                <td><input type="text" id="fullname" required></td>
+                <td><label for="city">City/Province</label></td>
+                <td><select id="city">
+                        <option>City/Province</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email*</label></td>
+                <td><input type="email" id="email" required></td>
+                <td><label for="mobile">Mobile*</label></td>
+                <td><input type="text" id="mobile" required></td>
+            </tr>
+            <tr>
+                <td><label for="district">District</label></td>
+                <td><select id="district">
+                        <option>District</option>
+                    </select></td>
+                <td><label for="wards">Wards</label></td>
+                <td><select id="wards">
+                        <option>Wards</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><label for="address">Address</label></td>
+                <td colspan="3"><input type="text" id="address" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td><label for="notes">Delivery Notes</label></td>
+                <td colspan="3"><textarea id="notes" style="width: 100%;"></textarea></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit" class="right-align-button">Submit</button>
+</form>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </aside>
+
+
+
+
+
+
 
     <footer id="footer" class="padding-large">
         <div class="container">
@@ -813,17 +859,26 @@
                     </div>
                 </div>
                 <div class="copyright">
-                    <p>© Copyright 2024 Bookly. HTML Template by <a href="https://templatesjungle.com/" target="_blank">TemplatesJungle</a>
+                    <p>© ccccCopyright 2024 Bookly. HTML Template by <a href="https://templatesjungle.com/" target="_blank">TemplatesJungle</a>
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
+
+    <script>
+                                    function goToPage(PageNumber) {
+                                        // Thực hiện các hành động cần thiết khi chuyển đến trang pageNumber
+                                        // Ví dụ: chuyển đến URL mới, gọi hàm để load dữ liệu mới, ...
+                                        window.location.href = "your_new_page.jsp?page=" + pageNumber;
+                                        // Ví dụ: window.location.href = "your_new_page.jsp?page=" + pageNumber;
+                                    }
+    </script>
 </body>
 
 </html>

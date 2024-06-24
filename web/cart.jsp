@@ -1,3 +1,10 @@
+<%-- 
+    Document   : cart
+    Created on : Jun 24, 2024, 11:18:30 PM
+    Author     : hoang
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -17,73 +24,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <style>
-  
-        .container {
-            display: flex;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .qr-code-section, .bank-section {
-            padding: 20px;
-        }
-        .qr-code-section {
-            border-right: 1px solid #ddd;
-            text-align: center;
-        }
-        .qr-code-section img {
-            width: 150px;
-            height: 150px;
-        }
-        .qr-code-section p {
-            margin: 10px 0;
-            color: red;
-            font-size: 24px;
-        }
-        .bank-section {
-            display: flex;
-            flex-direction: column;
-        }
-        .bank-section h3 {
-            margin-top: 0;
-        }
-        .bank-section input {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .bank-section select {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .bank-section button {
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .bank-section button:hover {
-            background-color: #0056b3;
-        }
-        .bank-section .cancel-button {
-            background-color: #6c757d;
-            margin-top: 10px;
-        }
-        .bank-section .cancel-button:hover {
-            background-color: #5a6268;
-        }
-    </style>
 </head>
 
 <body>
@@ -181,9 +121,22 @@
         <path
           d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
       </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="cart-cross-outline" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M12.03 8.97a.75.75 0 1 0-1.06 1.06l.97.97l-.97.97a.75.75 0 1 0 1.06 1.06l.97-.97l.97.97a.75.75 0 1 0 1.06-1.06l-.97-.97l.97-.97a.75.75 0 1 0-1.06-1.06l-.97.97z" />
+        <path fill="currentColor" fill-rule="evenodd"
+          d="M1.293 2.751a.75.75 0 0 1 .956-.459l.301.106c.617.217 1.14.401 1.553.603c.44.217.818.483 1.102.899c.282.412.399.865.452 1.362l.011.108H17.12c.819 0 1.653 0 2.34.077c.35.039.697.101 1.003.209c.3.105.631.278.866.584c.382.496.449 1.074.413 1.66c-.035.558-.173 1.252-.338 2.077l-.01.053l-.002.004l-.508 2.47c-.15.726-.276 1.337-.439 1.82c-.172.51-.41.96-.837 1.308c-.427.347-.916.49-1.451.556c-.505.062-1.13.062-1.87.062H10.88c-1.345 0-2.435 0-3.293-.122c-.897-.127-1.65-.4-2.243-1.026c-.547-.576-.839-1.188-.985-2.042c-.137-.8-.15-1.848-.15-3.3V7.038c0-.74-.002-1.235-.043-1.615c-.04-.363-.109-.545-.2-.677c-.087-.129-.22-.25-.524-.398c-.323-.158-.762-.314-1.43-.549l-.26-.091a.75.75 0 0 1-.46-.957M5.708 6.87v2.89c0 1.489.018 2.398.13 3.047c.101.595.274.925.594 1.263c.273.288.65.472 1.365.573c.74.105 1.724.107 3.14.107h5.304c.799 0 1.33-.001 1.734-.05c.382-.047.56-.129.685-.231c.125-.102.24-.26.364-.625c.13-.385.238-.905.4-1.688l.498-2.42v-.002c.178-.89.295-1.482.322-1.926c.026-.421-.04-.569-.101-.65a.561.561 0 0 0-.177-.087a3.17 3.17 0 0 0-.672-.134c-.595-.066-1.349-.067-2.205-.067zM5.25 19.5a2.25 2.25 0 1 0 4.5 0a2.25 2.25 0 0 0-4.5 0m2.25.75a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5m6.75-.75a2.25 2.25 0 1 0 4.5 0a2.25 2.25 0 0 0-4.5 0m2.25.75a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5"
+          clip-rule="evenodd" />
+      </symbol>
       <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
         <path
           d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="plus" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19 11h-6V5a1 1 0 0 0-2 0v6H5a1 1 0 0 0 0 2h6v6a1 1 0 0 0 2 0v-6h6a1 1 0 0 0 0-2Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="minus" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19 11H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2Z" />
       </symbol>
     </svg>
 
@@ -258,7 +211,7 @@
 
     <header id="header" class="site-header">
 
-        <div class="top-info border-bottom d-none d-md-block ">
+        <div class="top-info border-bottom d-none d-md-block">
             <div class="container-fluid">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -294,7 +247,7 @@
                     <div class="offcanvas-body">
                         <ul id="navbar" class="navbar-nav text-uppercase justify-content-start justify-content-lg-center align-items-start align-items-lg-center flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link me-4 active" href="index.html">Home</a>
+                                <a class="nav-link me-4" href="index.html">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link me-4" href="about.html">About</a>
@@ -321,7 +274,7 @@
                           class="badge bg-primary">Pro</span></a>
                                     </li>
                                     <li>
-                                        <a href="cart.html" class="dropdown-item fw-light">Cart <span
+                                        <a href="cart.html" class="dropdown-item active fw-light">Cart <span
                           class="badge bg-primary">Pro</span></a>
                                     </li>
                                     <li>
@@ -512,32 +465,457 @@
 
     </header>
 
-    <section id="billboard" class="position-relative d-flex align-items-center py-5 bg-light-gray" style="background-image: url(images/banner-image-bg.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 800px;">
-        <div class="container">
-        <div class="qr-code-section">
-            <h3>Thanh toán bằng QR Code</h3>
-            <img src="img/6808e660-89c6-4a32-b974-508cc4d27c59.jpg" alt="QR Code">
-            <p>500.000 VND</p>  
-            <a href="#">Hướng dẫn thanh toán?</a>
+    <section class="hero-section position-relative padding-large" style="background-image: url(images/banner-image-bg-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 400px;">
+        <div class="hero-content">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center">
+                        <h1>Cart</h1>
+                        <div class="breadcrumbs">
+                            <span class="item">
+                  <a href="index.html">Home > </a>
+                </span>
+                            <span class="item text-decoration-underline">Cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="bank-section">
-            <h3>Thanh toán qua Ngân hàng BIDV</h3>
-            <form>
-                
-                <label for="card">Sử dụng Thẻ</label><br>
-                
-                
-                <input type="text" placeholder="Số thẻ" required>
-                <input type="text" placeholder="Tên chủ thẻ (không dấu)" required>
-                <p>Điều kiện sử dụng dịch vụ</p>
-                <button type="submit">Xác Thực</button>
-                <button type="button" class="cancel-button">Hủy</button>
-            </form>
-        </div>
-    </div> 
     </section>
 
-    
+    <section class="cart padding-large">
+        <div class="container">
+            <div class="row">
+                <div class="cart-table">
+                    <div class="cart-header border-bottom border-top">
+                        <div class="row d-flex text-capitalize">
+                            <h4 class="col-lg-4 py-3 m-0">Product</h4>
+                            <h4 class="col-lg-3 py-3 m-0">Quantity</h4>
+                            <h4 class="col-lg-4 py-3 m-0">Subtotal</h4>
+                        </div>
+                    </div>
+
+                    <div class="cart-item border-bottom padding-small">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 col-md-3">
+                                <div class="cart-info d-flex gap-2 flex-wrap align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="card-image">
+                                            <img src="images/cart-item1.png" alt="cart-img" class="img-fluid border rounded-3">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="card-detail">
+                                            <h5 class="mt-2"><a href="single-product.html">The Emerald Crown</a></h5>
+                                            <div class="card-price">
+                                                <span class="price text-primary fw-light" data-currency-usd="$2000.00">$2000.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-7">
+                                <div class="row d-flex">
+                                    <div class="col-md-6">
+                                        <div class="product-quantity my-2 my-2">
+                                            <div class="input-group product-qty align-items-center" style="max-width: 150px;">
+                                                <span class="input-group-btn">
+                            <button type="button" class="bg-white shadow border rounded-3 fw-light quantity-left-minus"
+                              data-type="minus" data-field="">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                                                <input type="text" id="quantity" name="quantity" class="form-control bg-white shadow border rounded-3 py-2 mx-2 input-number text-center" value="1" min="1" max="100" required>
+                                                <span class="input-group-btn">
+                            <button type="button" class="bg-white shadow border rounded-3 fw-light quantity-right-plus"
+                              data-type="plus" data-field="">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="total-price">
+                                            <span class="money fs-2 fw-light text-primary">$2000.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-2">
+                                <div class="cart-cross-outline">
+                                    <a href="#">
+                      <svg class="cart-cross-outline" width="38" height="38">
+                        <use xlink:href="#cart-cross-outline"></use>
+                      </svg>
+                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item border-bottom padding-small">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 col-md-3">
+                                <div class="cart-info d-flex gap-2 flex-wrap align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="card-image">
+                                            <img src="images/cart-item2.png" alt="cart-img" class="img-fluid border rounded-3">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="card-detail">
+                                            <h5 class="mt-2"><a href="single-product.html">The Last Enchantment</a></h5>
+                                            <div class="card-price">
+                                                <span class="price text-primary fw-light" data-currency-usd="$2000.00">$400.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-7">
+                                <div class="row d-flex">
+                                    <div class="col-lg-6">
+                                        <div class="product-quantity my-2">
+                                            <div class="input-group product-qty align-items-center" style="max-width: 150px;">
+                                                <span class="input-group-btn">
+                            <button type="button" class="bg-white shadow border rounded-3 fw-light quantity-left-minus"
+                              data-type="minus" data-field="">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                                                <input type="text" id="quantity" name="quantity" class="form-control bg-white shadow border rounded-3 py-2 mx-2 input-number text-center" value="1" min="1" max="100" required>
+                                                <span class="input-group-btn">
+                            <button type="button" class="bg-white shadow border rounded-3 fw-light quantity-right-plus"
+                              data-type="plus" data-field="">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="total-price">
+                                            <span class="money fs-2 fw-light text-primary">$400.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-2">
+                                <div class="cart-cross-outline">
+                                    <a href="#">
+                      <svg class="cart-cross-outline" width="38" height="38">
+                        <use xlink:href="#cart-cross-outline"></use>
+                      </svg>
+                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-totals padding-medium pb-0">
+                    <h3 class="mb-3">Cart Totals</h3>
+                    <div class="total-price pb-3">
+                        <table cellspacing="0" class="table text-capitalize">
+                            <tbody>
+                                <tr class="subtotal pt-2 pb-2 border-top border-bottom">
+                                    <th>Subtotal</th>
+                                    <td data-title="Subtotal">
+                                        <span class="price-amount amount text-primary ps-5 fw-light">
+                        <bdi>
+                          <span class="price-currency-symbol">$</span>2,400.00
+                                        </bdi>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="order-total pt-2 pb-2 border-bottom">
+                                    <th>Total</th>
+                                    <td data-title="Total">
+                                        <span class="price-amount amount text-primary ps-5 fw-light">
+                        <bdi>
+                          <span class="price-currency-symbol">$</span>2,400.00</bdi>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="button-wrap d-flex flex-wrap gap-3">
+                        <button class="btn">Update Cart</button>
+                        <button class="btn">Continue Shopping</button>
+                        <button class="btn">Proceed to checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="customers-reviews" class="position-relative padding-large" style="background-image: url(images/banner-image-bg.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 600px;">
+        <div class="container offset-md-3 col-md-6 ">
+            <div class="position-absolute top-50 end-0 pe-0 pe-xxl-5 me-0 me-xxl-5 swiper-next testimonial-button-next">
+                <svg class="chevron-forward-circle d-flex justify-content-center align-items-center p-2" width="80" height="80">
+            <use xlink:href="#alt-arrow-right-outline"></use>
+          </svg>
+            </div>
+            <div class="position-absolute top-50 start-0 ps-0 ps-xxl-5 ms-0 ms-xxl-5 swiper-prev testimonial-button-prev">
+                <svg class="chevron-back-circle d-flex justify-content-center align-items-center p-2" width="80" height="80">
+            <use xlink:href="#alt-arrow-left-outline"></use>
+          </svg>
+            </div>
+            <div class="section-title mb-4 text-center">
+                <h3 class="mb-4">Customers reviews</h3>
+            </div>
+            <div class="swiper testimonial-swiper ">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card position-relative text-left p-5 border rounded-3">
+                            <blockquote>"I stumbled upon this bookstore while visiting the city, and it instantly became my favorite spot. The cozy atmosphere, friendly staff, and wide selection of books make every visit a delight!"</blockquote>
+                            <div class="rating text-warning d-flex align-items-center">
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                            </div>
+                            <h5 class="mt-1 fw-normal">Emma Chamberlin</h5>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card position-relative text-left p-5 border rounded-3">
+                            <blockquote>"As an avid reader, I'm always on the lookout for new releases, and this bookstore never disappoints. They always have the latest titles, and their recommendations have introduced me to some incredible reads!"</blockquote>
+                            <div class="rating text-warning d-flex align-items-center">
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                            </div>
+                            <h5 class="mt-1 fw-normal">Thomas John</h5>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card position-relative text-left p-5 border rounded-3">
+                            <blockquote>"I ordered a few books online from this store, and I was impressed by the quick delivery and careful packaging. It's clear that they prioritize customer satisfaction, and I'll definitely be shopping here again!"</blockquote>
+                            <div class="rating text-warning d-flex align-items-center">
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                            </div>
+                            <h5 class="mt-1 fw-normal">Kevin Bryan</h5>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card position-relative text-left p-5 border rounded-3">
+                            <blockquote>“I stumbled upon this tech store while searching for a new laptop, and I couldn't be happier with my experience! The staff was incredibly knowledgeable and guided me through the process of choosing the perfect device for my
+                                needs. Highly recommended!”</blockquote>
+                            <div class="rating text-warning d-flex align-items-center">
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                            </div>
+                            <h5 class="mt-1 fw-normal">Stevin</h5>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card position-relative text-left p-5 border rounded-3">
+                            <blockquote>“I stumbled upon this tech store while searching for a new laptop, and I couldn't be happier with my experience! The staff was incredibly knowledgeable and guided me through the process of choosing the perfect device for my
+                                needs. Highly recommended!”</blockquote>
+                            <div class="rating text-warning d-flex align-items-center">
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                                <svg class="star star-fill">
+                    <use xlink:href="#star-fill"></use>
+                  </svg>
+                            </div>
+                            <h5 class="mt-1 fw-normal">Roman</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="latest-posts" class="padding-large">
+        <div class="container">
+            <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
+                <h3 class="d-flex align-items-center">Latest posts</h3>
+                <a href="shop.html" class="btn">View All</a>
+            </div>
+            <div class="row">
+                <div class="col-md-3 posts mb-4">
+                    <img src="images/post-item1.jpg" alt="post image" class="img-fluid rounded-3">
+                    <a href="blog.html" class="fs-6 text-primary">Books</a>
+                    <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">10 Must-Read Books of the Year: Our Top Picks!</a></h4>
+                    <p class="mb-2">Dive into the world of cutting-edge technology with our latest blog post, where we highlight five essential gadg <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span>
+                    </p>
+                </div>
+                <div class="col-md-3 posts mb-4">
+                    <img src="images/post-item2.jpg" alt="post image" class="img-fluid rounded-3">
+                    <a href="blog.html" class="fs-6 text-primary">Books</a>
+                    <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">The Fascinating Realm of Science Fiction</a></h4>
+                    <p class="mb-2">Explore the intersection of technology and sustainability in our latest blog post. Learn about the innovative <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span> </p>
+                </div>
+                <div class="col-md-3 posts mb-4">
+                    <img src="images/post-item3.jpg" alt="post image" class="img-fluid rounded-3">
+                    <a href="blog.html" class="fs-6 text-primary">Books</a>
+                    <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">Finding Love in the Pages of a Book</a></h4>
+                    <p class="mb-2">Stay ahead of the curve with our insightful look into the rapidly evolving landscape of wearable technology. <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span>
+                    </p>
+                </div>
+                <div class="col-md-3 posts mb-4">
+                    <img src="images/post-item4.jpg" alt="post image" class="img-fluid rounded-3">
+                    <a href="blog.html" class="fs-6 text-primary">Books</a>
+                    <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">Reading for Mental Health: How Books Can Heal and Inspire</a></h4>
+                    <p class="mb-2">In today's remote work environment, productivity is key. Discover the top apps and tools that can help you stay <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="instagram">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h3>Instagram</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <figure class="instagram-item position-relative rounded-3">
+                        <a href="https://templatesjungle.com/" class="image-link position-relative">
+                            <div class="icon-overlay position-absolute d-flex justify-content-center">
+                                <svg class="instagram">
+                    <use xlink:href="#instagram"></use>
+                  </svg>
+                            </div>
+                            <img src="images/insta-item1.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        </a>
+                    </figure>
+                </div>
+                <div class="col-md-2">
+                    <figure class="instagram-item position-relative rounded-3">
+                        <a href="https://templatesjungle.com/" class="image-link position-relative">
+                            <div class="icon-overlay position-absolute d-flex justify-content-center">
+                                <svg class="instagram">
+                    <use xlink:href="#instagram"></use>
+                  </svg>
+                            </div>
+                            <img src="images/insta-item2.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        </a>
+                    </figure>
+                </div>
+                <div class="col-md-2">
+                    <figure class="instagram-item position-relative rounded-3">
+                        <a href="https://templatesjungle.com/" class="image-link position-relative">
+                            <div class="icon-overlay position-absolute d-flex justify-content-center">
+                                <svg class="instagram">
+                    <use xlink:href="#instagram"></use>
+                  </svg>
+                            </div>
+                            <img src="images/insta-item3.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        </a>
+                    </figure>
+                </div>
+                <div class="col-md-2">
+                    <figure class="instagram-item position-relative rounded-3">
+                        <a href="https://templatesjungle.com/" class="image-link position-relative">
+                            <div class="icon-overlay position-absolute d-flex justify-content-center">
+                                <svg class="instagram">
+                    <use xlink:href="#instagram"></use>
+                  </svg>
+                            </div>
+                            <img src="images/insta-item4.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        </a>
+                    </figure>
+                </div>
+                <div class="col-md-2">
+                    <figure class="instagram-item position-relative rounded-3">
+                        <a href="https://templatesjungle.com/" class="image-link position-relative">
+                            <div class="icon-overlay position-absolute d-flex justify-content-center">
+                                <svg class="instagram">
+                    <use xlink:href="#instagram"></use>
+                  </svg>
+                            </div>
+                            <img src="images/insta-item5.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        </a>
+                    </figure>
+                </div>
+                <div class="col-md-2">
+                    <figure class="instagram-item position-relative rounded-3">
+                        <a href="https://templatesjungle.com/" class="image-link position-relative">
+                            <div class="icon-overlay position-absolute d-flex justify-content-center">
+                                <svg class="instagram">
+                    <use xlink:href="#instagram"></use>
+                  </svg>
+                            </div>
+                            <img src="images/insta-item6.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        </a>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer id="footer" class="padding-large">
         <div class="container">
             <div class="row">
