@@ -1,3 +1,10 @@
+<%-- 
+    Document   : cart
+    Created on : Jun 24, 2024, 11:18:30 PM
+    Author     : hoang
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
