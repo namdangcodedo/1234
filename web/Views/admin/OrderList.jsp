@@ -30,38 +30,38 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-   <style>
-        .box-tools {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+        <style>
+            .box-tools {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
 
-        .box-tools section {
-            margin-right: 10px;
-        }
+            .box-tools section {
+                margin-right: 10px;
+            }
 
-        .box-tools select {
-            padding: 5px;
-            font-size: 14px;
-        }
+            .box-tools select {
+                padding: 5px;
+                font-size: 14px;
+            }
 
-        .box-tools .input-group {
-            display: flex;
-            align-items: center;
-        }
+            .box-tools .input-group {
+                display: flex;
+                align-items: center;
+            }
 
-        .box-tools .input-group input {
-            width: 150px;
-            padding: 5px;
-            font-size: 14px;
-        }
+            .box-tools .input-group input {
+                width: 150px;
+                padding: 5px;
+                font-size: 14px;
+            }
 
-        .box-tools .input-group button {
-            padding: 5px 10px;
-            font-size: 14px;
-        }
-    </style>
+            .box-tools .input-group button {
+                padding: 5px 10px;
+                font-size: 14px;
+            }
+        </style>
     </head>
     <body class="skin-black">
         <!-- header logo: style can be found in header.less -->
@@ -339,7 +339,7 @@
 
 
                         <header class="panel-heading">
-                           Order History
+                            Order List
 
                         </header>
                         <!-- <div class="box-header"> -->
@@ -348,6 +348,13 @@
                         <!-- </div> -->
                         <div class="panel-body table-responsive">
                             <div class="box-tools m-b-15">
+                                 <section>
+                                    <select>
+                                        <option>01/01/2024</option>
+                                        <option>All date</option>                                      
+                                        <option>.....</option>
+                                    </select>
+                                </section>
                                 <section>
                                     <select>
                                         <option>All status</option>
@@ -357,80 +364,97 @@
                                         <option>Paid</option>
                                     </select>
                                 </section>
+                                <section>
+                                    <select>
+                                        <option>DucDung</option>
+                                        <option>NgocNam</option>
+                                        <option>MinhNam</option>
+                                        <option>.....</option>                                       
+                                    </select>
+                                </section>
                                 <div class="input-group">
                                     <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search"/>
                                     <div class="input-group-btn">
                                         <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                                     </div>
                                 </div>
+                                <button style="background-color: greenyellow" class="btn btn-sm btn-default"><a href="###">New order</a></button>
                             </div>
-                            <table class="table table-hover">
-                                <tr>
-                                    <th>Order ID</th>
-                                    <th>User</th>
-                                    <th>Email </th>
-                                    <th>Phone Number</th>
-                                    <th>Amount</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>Namdnhe176906@gmail.com</td>
-                                    <td>0382720127</td>
-                                    <td>1.094.748đ</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="label label-success">Submitter</span></td>
-                                    <td><a href="#">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>Namdnhe176906@gmail.com</td>
-                                    <td>0382720127</td>
-                                    <td>1.094.748đ</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="label label-warning">Pending</span></td>
-                                    <td><a href="#">View/Update</a></td>
-                                </tr>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>Namdnhe176906@gmail.com</td>
-                                    <td>0382720127</td>
-                                    <td>1.094.748đ</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="label label-primary">verified</span></td>
-                                    <td><a href="#">View/Update</a></td>
-                                </tr>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>Namdnhe176906@gmail.com</td>
-                                    <td>0382720127</td>
-                                    <td>1.094.748đ</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="label label-danger">Paid</span></td>
-                                    <td><a href="#">View</a></td>
-                                </tr>
-                            </table>
-                             <div class="table-foot">
-                                        <ul class="pagination pagination-sm no-margin pull-right">
-                                        <li><a href="#">&laquo;</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">&raquo;</a></li>
-                                    </ul>
-                                    </div>
-                        </div><!-- /.box-body -->
+                           
+                        </div>
+                    </div>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Order ID</th>
+                            <th>User</th>
+                            <th>Email </th>
+                            <th>Phone Number</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Sale Staff</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>183</td>
+                            <td>John Doe</td>
+                            <td>Namdnhe176906@gmail.com</td>
+                            <td>0382720127</td>
+                            <td>1.094.748đ</td>
+                            <td>11-7-2014</td>
+                            <td>DucDung</td>
+                            <td><span class="label label-success">Submitter</span></td>
+                            <td><a href="#">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>183</td>
+                            <td>John Doe</td>
+                            <td>Namdnhe176906@gmail.com</td>
+                            <td>0382720127</td>
+                            <td>1.094.748đ</td>
+                            <td>11-7-2014</td>
+                            <td>DucDung</td>
+                            <td><span class="label label-warning">Pending</span></td>
+                            <td><a href="#">View/Update</a></td>
+                        </tr>
+                        <tr>
+                            <td>183</td>
+                            <td>John Doe</td>
+                            <td>Namdnhe176906@gmail.com</td>
+                            <td>0382720127</td>
+                            <td>1.094.748đ</td>
+                            <td>11-7-2014</td>
+                            <td>DucDung</td>
+                            <td><span class="label label-primary">verified</span></td>
+                            <td><a href="#">View/Update</a></td>
+                        </tr>
+                        <tr>
+                            <td>183</td>
+                            <td>John Doe</td>
+                            <td>Namdnhe176906@gmail.com</td>
+                            <td>0382720127</td>
+                            <td>1.094.748đ</td>
+                            <td>11-7-2014</td>
+                            <td>DucDung</td>
+                            <td><span class="label label-danger">Paid</span></td>
+                            <td><a href="#">View</a></td>
+                        </tr>
+                    </table>
+                    <div class="table-foot">
+                        <ul class="pagination pagination-sm no-margin pull-right">
+                            <li><a href="#">&laquo;</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </div>
+                    </div><!-- /.box-body -->
                     </div><!-- /.box -->
                     </div>
                     </div>
                 </section><!-- /.content -->
-            <div class="footer-main">
+                <div class="footer-main">
                     ShopBook88
                 </div>
             </aside><!-- /.right-side -->
