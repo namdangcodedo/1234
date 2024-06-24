@@ -4,8 +4,24 @@
         <servlet-name>HomeController</servlet-name>
         <servlet-class>HomeController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DashBoard</servlet-name>
+        <servlet-class>DashBoard</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderHistory</servlet-name>
+        <servlet-class>OrderHistory</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DashBoard</servlet-name>
+        <url-pattern>/dash</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderHistory</servlet-name>
+        <url-pattern>/odhistory</url-pattern>
     </servlet-mapping>
 </web-app>
