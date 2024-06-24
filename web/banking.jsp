@@ -1,3 +1,10 @@
+<%-- 
+    Document   : banking
+    Created on : Jun 25, 2024, 12:20:16 AM
+    Author     : LENOVO
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -515,23 +522,23 @@
     <section id="billboard" class="position-relative d-flex align-items-center py-5 bg-light-gray" style="background-image: url(images/banner-image-bg.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 800px;">
         <div class="container">
         <div class="qr-code-section">
-            <h3>Thanh toán bằng QR Code</h3>
+            <h3>Pay with QR Code</h3>
             <img src="img/6808e660-89c6-4a32-b974-508cc4d27c59.jpg" alt="QR Code">
             <p>500.000 VND</p>  
-            <a href="#">Hướng dẫn thanh toán?</a>
+            <a href="#">Payment instructions?</a>
         </div>
         <div class="bank-section">
-            <h3>Thanh toán qua Ngân hàng BIDV</h3>
+            <h3>Payment via BIDV Bank</h3>
             <form>
                 
-                <label for="card">Sử dụng Thẻ</label><br>
+                <label for="card">Using the Card</label><br>
                 
                 
-                <input type="text" placeholder="Số thẻ" required>
-                <input type="text" placeholder="Tên chủ thẻ (không dấu)" required>
-                <p>Điều kiện sử dụng dịch vụ</p>
-                <button type="submit">Xác Thực</button>
-                <button type="button" class="cancel-button">Hủy</button>
+                <input type="text" placeholder="Card Number" required>
+                <input type="text" placeholder="Cardholder name " required>
+                <p>Conditions for using the service</p>
+                <button type="submit">Confirm</button>
+                <button type="button" id="cancel-button">Cancel</button>
             </form>
         </div>
     </div> 
@@ -678,6 +685,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script>
+        document.getElementById('cancel-button').addEventListener('click', function() {
+            window.location.href = 'checkout.html';
+        });
+    </script>
 </body>
 
 </html>
