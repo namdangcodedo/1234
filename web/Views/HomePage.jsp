@@ -291,6 +291,9 @@
                             <li class="nav-item">
                                 <a class="nav-link me-4" href="blog.html">Blogs</a>
                             </li>
+                            <li class="nav-item">
+                                 <a href="Views/admin/DashBoard.jsp" onclick="goToPage(1)">Admin</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link me-4 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu animate slide border">
@@ -328,9 +331,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-4" href="dash">Admin</a>
-                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link text-decoration-underline me-4" href="https://templatesjungle.gumroad.com/l/bookly-bookstore-ecommerce-bootstrap-html-css-website-template" target="_blank">Get Pro</a>
                             </li>
@@ -1092,6 +1093,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
+    
+    <script>
+    function goToPage(PageNumber) {
+        // Thực hiện các hành động cần thiết khi chuyển đến trang pageNumber
+        // Ví dụ: chuyển đến URL mới, gọi hàm để load dữ liệu mới, ...
+        window.location.href = "your_new_page.jsp?page=" + pageNumber;
+        // Ví dụ: window.location.href = "your_new_page.jsp?page=" + pageNumber;
+    }
+</script>
 </body>
 
 </html>
