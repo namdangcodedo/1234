@@ -8,8 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Director | Simple Tables</title>
+         <title>Director | Simple Tables</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <meta name="description" content="Developed By M Abdur Rokib Promy">
         <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
@@ -31,6 +30,22 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
         <style>
+            .select-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Màu nền của nút */
+    color: white; /* Màu chữ của nút */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; /* Bo tròn các góc */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select-button:hover {
+    background-color: #45a049; /* Màu nền khi di chuột qua */
+}
             .submit-btn {
                 display: block;
                 width: 100%;
@@ -392,9 +407,9 @@
                             </a>
                         </li>
 
-                        <li class="active">
-                            <a href="simple.html">
-                                <i class="fa fa-glass"></i> <span>Order History</span>
+                       <li class="active">
+                            <a href="OrderList.jsp">
+                                <i class="fa fa-glass"></i> <span>Manage Order</span>
                             </a>
                         </li>
 
@@ -442,8 +457,10 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <button class="badge-info" type="button">Select More Products</button>
-                                         <div style="margin-left:  87%">
+                                        
+                                        <td><a href="ProductSellect.jsp" class="select-button">Select More Product</a></td>
+                                   
+                                        <div style="margin-left:  87%">
                             <p>Sub Total: 3.150.800đ</p>
                             <p>Shipping Fee: 25.000đ</p>
                             <p><strong>Total: 3.175.800đ</strong></p>
@@ -554,7 +571,6 @@
                     <div><!-- /.row -->
                 </section><!-- /.content -->                         </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
-
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
