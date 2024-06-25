@@ -396,7 +396,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="View/DashBoard_1.jsp">
+                        <a href="/web/dashboardProduct.jsp">
                             <i class="fa fa-dashboard"></i> <span>Dash board</span>
                         </a>
                     </li>
