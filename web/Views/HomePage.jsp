@@ -329,6 +329,9 @@
                                         <a href="contact.html" class="dropdown-item fw-light">Contact <span
                                                 class="badge bg-primary">Pro</span></a>
                                     </li>
+                                    <li>
+                                        <a href="productList.jsp" class="dropdown-item fw-light">Products List <span class="badge bg-primary">Pro</span></a>
+                                    </li>
                                 </ul>
                             </li>
                             
@@ -513,7 +516,8 @@
                                         </ul>
                                         <div class="d-flex flex-wrap justify-content-center">
                                             <a href="cart.html" class="w-100 btn btn-dark mb-1" type="submit">View Cart</a>
-                                            <a href="checkout.html" class="w-100 btn btn-primary" type="submit">Go to checkout</a>
+                                            <a href="checkout.html" class="w-100 btn btn-primary mb-1" type="submit">Go to checkout</a>
+                                            <a href="orderHistory.jsp" class="w-100 btn btn-primary" type="submit">Order History</a>
                                         </div>
                                     </div>
                                 </li>

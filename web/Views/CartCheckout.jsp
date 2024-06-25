@@ -620,7 +620,8 @@ input[type="text"], input[type="email"], select, textarea {
                                         </ul>
                                         <div class="d-flex flex-wrap justify-content-center">
                                             <a href="cart.html" class="w-100 btn btn-dark mb-1" type="submit">View Cart</a>
-                                            <a href="checkout.html" class="w-100 btn btn-primary" type="submit">Go to checkout</a>
+                                            <a href="checkout.html" class="w-100 btn btn-primary mb-1" type="submit">Go to checkout</a>
+                                            <a href="orderHistory.jsp" class="w-100 btn btn-primary" type="submit">Order History</a>
                                         </div>
                                     </div>
                                 </li>
