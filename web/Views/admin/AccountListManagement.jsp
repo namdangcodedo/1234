@@ -368,7 +368,7 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li>
-                        <a href="View/AccountManager.jsp">
+                        <a href="AccountListManagement.jsp">
                             <i class="fa fa-dashboard"></i> <span>Account Manager</span>
                         </a>
                     </li>

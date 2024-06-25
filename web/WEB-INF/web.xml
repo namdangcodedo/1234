@@ -24,4 +24,8 @@
         <servlet-name>OrderHistory</servlet-name>
         <url-pattern>/odhistory</url-pattern>
     </servlet-mapping>
+    <welcome-file-list>
+    <welcome-file>Views/HomePage.jsp</welcome-file>
+</welcome-file-list>
+
 </web-app>
