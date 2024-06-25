@@ -336,6 +336,10 @@
                                 <a class="nav-link text-decoration-underline me-4" href="https://templatesjungle.gumroad.com/l/bookly-bookstore-ecommerce-bootstrap-html-css-website-template" target="_blank">Get Pro</a>
                             </li>
                         </ul>
+                       
+                        
+                        
+                        
                         <div class="user-items d-flex">
                             <ul class="d-flex justify-content-end list-unstyled mb-0">
                                 <li class="search-item pe-3">
@@ -428,6 +432,7 @@
                                         </div>
                                     </div>
                                 </li>
+                                
                                 <li class="wishlist-dropdown dropdown pe-3">
                                     <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
                                         <svg class="wishlist">

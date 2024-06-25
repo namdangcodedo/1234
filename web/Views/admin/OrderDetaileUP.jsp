@@ -1,15 +1,16 @@
 <%-- 
-    Document   : OrderHistory
-    Created on : Jun 24, 2024, 1:03:49 AM
+    Document   : basic
+    Created on : Jun 14, 2024, 12:21:37 AM
     Author     : USER
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Director | Simple Tables</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Director | Dashboard</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <meta name="description" content="Developed By M Abdur Rokib Promy">
         <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
@@ -19,10 +20,100 @@
         <link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
         <link href="${pageContext.request.contextPath}/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-        <!-- google font -->
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <!-- Theme style -->
         <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
+
+        <style>
+            .select-button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #4CAF50; /* Màu nền của nút */
+                color: white; /* Màu chữ của nút */
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px; /* Bo tròn các góc */
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .select-button:hover {
+                background-color: #45a049; /* Màu nền khi di chuột qua */
+            }
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                width: 80%;
+                margin: 50px auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .invoice-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            .invoice-header .logo {
+                width: 150px;
+                height: auto;
+            }
+
+            .invoice-header .invoice-info {
+                text-align: right;
+            }
+
+            .invoice-info h3 {
+                margin-bottom: 5px;
+            }
+
+            .invoice-info p {
+                margin-bottom: 0;
+            }
+
+            .table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                text-align: left;
+                padding: 8px;
+                border: 1px solid #ddd;
+            }
+
+            th {
+                background-color: #f0f0f0;
+            }
+
+            .table-total {
+                margin-top: 20px;
+            }
+
+            .table-total tr:first-child th {
+                text-align: right;
+            }
+
+            .table-total tr:last-child th,
+            .table-total tr:last-child td {
+                font-weight: bold;
+            }
+        </style>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,38 +121,6 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-   <style>
-        .box-tools {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .box-tools section {
-            margin-right: 10px;
-        }
-
-        .box-tools select {
-            padding: 5px;
-            font-size: 14px;
-        }
-
-        .box-tools .input-group {
-            display: flex;
-            align-items: center;
-        }
-
-        .box-tools .input-group input {
-            width: 150px;
-            padding: 5px;
-            font-size: 14px;
-        }
-
-        .box-tools .input-group button {
-            padding: 5px 10px;
-            font-size: 14px;
-        }
-    </style>
     </head>
     <body class="skin-black">
         <!-- header logo: style can be found in header.less -->
@@ -163,7 +222,6 @@
                                 <span class="label label-danger">9</span>
                             </a>
                             <ul class="dropdown-menu">
-
                                 <li class="header">You have 9 tasks</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
@@ -301,6 +359,8 @@
                             </span>
                         </div>
                     </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li>
                             <a href="index.html">
@@ -320,8 +380,8 @@
                         </li>
 
                         <li class="active">
-                            <a href="simple.html">
-                                <i class="fa fa-glass"></i> <span>Order History</span>
+                            <a href="OrderList.jsp">
+                                <i class="fa fa-glass"></i> <span>Manage Order</span>
                             </a>
                         </li>
 
@@ -332,115 +392,146 @@
 
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
+                <!-- Content Header (Page header) -->
+
 
                 <!-- Main content -->
-                <section class="content">
-                    <div class="row">
+                <div class="container">
+                    <h1>Order Details - #1234</h1>
+
+                  
+                        <div style="margin-right: 50px;">
+                            <h3>Order Information</h3>
+                           
+                            <table >
+                        <tr>
+                            <th> Order ID:</th>
+                            <th> <input type="text" value="#1234" readonly><br></th>                           
+                        </tr>
+                        <tr>
+                            <th>  Customer Name: </th>
+                            <th>   <input type="text" value=" Đào Ngọc Nam" readonly><br></th>                           
+                        </tr>
+                        <tr>
+                            <th>  Email:</th>
+                            <th> <input type="email" value=" namdn25012003@gmail.com" readonly><br></th>                           
+                        </tr>
+                        <tr>
+                            <th>  Shipping Address: </th>
+                            <th>   <input type="text" value=" House No. 83, Alley 9, Mường Chà Town, Điện Biên Province" readonly><br></th>                           
+                        </tr>
+                        <tr>
+                            <th>  Order Status:</th>
+                            <th>  <input type="text" value=" Shipping in progress" readonly><br></th>                           
+                        </tr>
+                       
+                       
+                        </table>
+                        </div>
+   
+                    <h2>Products</h2>
+                    <table class="table">
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                        <tr>
+                            <td>Product 1</td>
+                            <td>1</td>
+                            <td>100,000₫</td>
+                            <td>100,000₫</td>
+                        </tr>
+                        <tr>
+                            <td>Product 2</td>
+                            <td>2</td>
+                            <td>50,000₫</td>
+                            <td>100,000₫</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: right;">Subtotal:</td>
+                            <td>200,000₫</td>
+                        </tr>
+                    </table>
+                    <td><a href="ProductSellectUP.jsp" class="select-button">Select More Product</a></td>
 
 
-                        <header class="panel-heading">
-                           Order History
 
-                        </header>
-                        <!-- <div class="box-header"> -->
-                        <!-- <h3 class="box-title">Responsive Hover Table</h3> -->
 
-                        <!-- </div> -->
-                        <div class="panel-body table-responsive">
-                            <div class="box-tools m-b-15">
-                                <section>
-                                    <select>
-                                        <option>All status</option>
-                                        <option>Submitted</option>
-                                        <option>Verified</option>
-                                        <option>Pending</option>
-                                        <option>Paid</option>
-                                    </select>
-                                </section>
-                                <div class="input-group">
-                                    <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search"/>
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <table class="table table-hover">
-                                <tr>
-                                    <th>Order ID</th>
-                                    <th>User</th>
-                                    <th>Email </th>
-                                    <th>Phone Number</th>
-                                    <th>Amount</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>Namdnhe176906@gmail.com</td>
-                                    <td>0382720127</td>
-                                    <td>1.094.748đ</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="label label-success">Submitter</span></td>
-                                    <td><a href="#">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>Namdnhe176906@gmail.com</td>
-                                    <td>0382720127</td>
-                                    <td>1.094.748đ</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="label label-warning">Pending</span></td>
-                                    <td><a href="#">View/Update</a></td>
-                                </tr>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>Namdnhe176906@gmail.com</td>
-                                    <td>0382720127</td>
-                                    <td>1.094.748đ</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="label label-primary">verified</span></td>
-                                    <td><a href="#">View/Update</a></td>
-                                </tr>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>Namdnhe176906@gmail.com</td>
-                                    <td>0382720127</td>
-                                    <td>1.094.748đ</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="label label-danger">Paid</span></td>
-                                    <td><a href="#">View</a></td>
-                                </tr>
-                            </table>
-                             <div class="table-foot">
-                                        <ul class="pagination pagination-sm no-margin pull-right">
-                                        <li><a href="#">&laquo;</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">&raquo;</a></li>
-                                    </ul>
-                                    </div>
-                        </div><!-- /.box-body -->
-                    </div><!-- /.box -->
+                    <table>
+                        <tr>
+                            <th> <h2>Total Amount</h2>
+
+                                <table border="0">
+                                    <tr>
+                                        <td >Total Product Price:</td>
+                                        <td>200,000₫</td>
+                                    </tr>
+                                    <tr>
+                                        <td >Shipping Fee:</td>
+                                        <td>36,000₫</td>
+                                    </tr>
+                                    <tr>
+                                        <td >Tax:</td>
+                                        <td>10,000₫</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: red">Total:</td>
+                                        <td style="color: red">246,000₫</td>
+                                    </tr>
+
+                                </table></div></th>
+                            <th>
+                                <div ><h2>Payment Method</h2>
+                                    <table border="2">
+                                        <tr>
+                                            <td >Payment Method:</td>
+                                            <td>
+                                                <section>
+                                                    <select>
+                                                        <option>Cash Payment</option>
+                                                        <option>Bank Transfer</option>
+                                                        <option>Internet Banking</option>
+                                                    </select>
+                                                    
+                                                </section>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td >Payment Status:</td>
+                                             <td>
+                                                <section>
+                                                    <select>
+                                                        <option>Verified</option>
+                                                        <option>Paid</option>
+                                                        <option>Shipping</option>
+                                                        <option>Shipped</option>
+                                                    </select>
+                                                    
+                                                </section>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td >Payment Date:</td>
+                                            <td>25/06/2024</td>
+                                        </tr>
+                                    </table>
+
+                                </div></th>
+                        <tr>
+                    </table>
+                    <td><a href="OrderList.jsp" class="select-button">Update</a></td>
                     </div>
-                    </div>
-                </section><!-- /.content -->
-            <div class="footer-main">
-                    ShopBook88
                 </div>
+
+
             </aside><!-- /.right-side -->
+
         </div><!-- ./wrapper -->
-
-
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.min.js" type="text/javascript"></script>
-
         <!-- Bootstrap -->
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- Director App -->

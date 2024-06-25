@@ -1,16 +1,14 @@
 <%-- 
-    Document   : basic
-    Created on : Jun 14, 2024, 12:21:37 AM
+    Document   : OrderHistory
+    Created on : Jun 24, 2024, 1:03:49 AM
     Author     : USER
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Director | Dashboard</title>
+         <title>Director | Simple Tables</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <meta name="description" content="Developed By M Abdur Rokib Promy">
         <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
@@ -20,84 +18,10 @@
         <link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
         <link href="${pageContext.request.contextPath}/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <!-- google font -->
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <!-- Theme style -->
         <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
-
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-
-            .container {
-                width: 80%;
-                margin: 50px auto;
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            }
-
-            h1 {
-                text-align: center;
-                margin-bottom: 20px;
-                color: #333;
-            }
-
-            .invoice-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 20px;
-            }
-
-            .invoice-header .logo {
-                width: 150px;
-                height: auto;
-            }
-
-            .invoice-header .invoice-info {
-                text-align: right;
-            }
-
-            .invoice-info h3 {
-                margin-bottom: 5px;
-            }
-
-            .invoice-info p {
-                margin-bottom: 0;
-            }
-
-            .table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-
-            th, td {
-                text-align: left;
-                padding: 8px;
-                border: 1px solid #ddd;
-            }
-
-            th {
-                background-color: #f0f0f0;
-            }
-
-            .table-total {
-                margin-top: 20px;
-            }
-
-            .table-total tr:first-child th {
-                text-align: right;
-            }
-
-            .table-total tr:last-child th,
-            .table-total tr:last-child td {
-                font-weight: bold;
-            }
-        </style>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -105,6 +29,127 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+        <style>
+            .select-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Màu nền của nút */
+    color: white; /* Màu chữ của nút */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; /* Bo tròn các góc */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select-button:hover {
+    background-color: #45a049; /* Màu nền khi di chuột qua */
+}
+            .submit-btn {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                background-color: #007BFF;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .box-tools {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+
+            .box-tools section {
+                margin-right: 10px;
+            }
+
+            .box-tools select {
+                padding: 5px;
+                font-size: 14px;
+            }
+
+            .box-tools .input-group {
+                display: flex;
+                align-items: center;
+            }
+
+            .box-tools .input-group input {
+                width: 150px;
+                padding: 5px;
+                font-size: 14px;
+            }
+
+            .box-tools .input-group button {
+                padding: 5px 10px;
+                font-size: 14px;
+            }
+
+
+            .container h2 {
+                margin-top: 0;
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            .form-group input, .form-group select, .form-group textarea {
+                width: calc(100% - 10px);
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+            .form-group textarea {
+                height: 100px;
+            }
+            .form-group-inline {
+                display: flex;
+                justify-content: space-between;
+            }
+            .form-group-inline .form-group {
+                flex: 1;
+                margin-right: 10px;
+            }
+            .form-group-inline .form-group:last-child {
+                margin-right: 0;
+            }
+            .payment-method, .order-status {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+            .payment-method label, .order-status label {
+                margin-right: 10px;
+            }
+            .payment-method input, .order-status input {
+                margin-right: 5px;
+            }
+            .totals {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 15px;
+            }
+            .submit-btn {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                background-color: #007BFF;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .submit-btn:hover {
+                background-color: #0056b3;
+            }
+        </style>
     </head>
     <body class="skin-black">
         <!-- header logo: style can be found in header.less -->
@@ -206,6 +251,7 @@
                                 <span class="label label-danger">9</span>
                             </a>
                             <ul class="dropdown-menu">
+
                                 <li class="header">You have 9 tasks</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
@@ -343,8 +389,6 @@
                             </span>
                         </div>
                     </form>
-                    <!-- /.search form -->
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li>
                             <a href="index.html">
@@ -376,108 +420,162 @@
 
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
-                <!-- Content Header (Page header) -->
-
 
                 <!-- Main content -->
-                <div class="container">
-                    <h1>Order Details - #1234</h1>
-
-                    <div class="invoice-header">
-                        <div style="margin-right: 50px;">
-                            <h3>Order Information</h3>
-                            <p>Order ID: #1234</p>
-                            <p>Customer Name: Đào Ngọc Nam</p>
-                            <p>Email: namdn25012003@gmail.com</p>
-                            <p>Order Date: 06/07/2024</p>
-                            <p>Shipping Address: House No. 83, Alley 9, Mường Chà Town, Điện Biên Province</p>
-                            <p>Order Status: Shipping in progress</p>
+                <section class="content">
+                    <div class="row">
+                        <header class="panel-heading">
+                            <div class="new-order">
+                                <h2>New Order</h2>
+                                <div class="order-container">
+                                    <div class="selected-products">
+                                        <h3>Selected Products</h3>
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Picture</th>
+                                                    <th>Product</th>
+                                                    <th>Price</th>
+                                                    <th>Quantity</th>
+                                                    <th>Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><img height="100px" width="100px" src="https://th.bing.com/th/id/R.09d9bce822589c25113a33f2f625ecd4?rik=vmInoBkNurrwbg&pid=ImgRaw&r=0" alt="Product Image"></td>
+                                                    <td>Product Name1<br>Category NameX; Available: 5</td>
+                                                    <td>3.101.000đ</td>
+                                                    <td><input type="number" value="1"></td>
+                                                    <td>3.101.000đ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img height="100px" width="100px" src="https://th.bing.com/th/id/R.09d9bce822589c25113a33f2f625ecd4?rik=vmInoBkNurrwbg&pid=ImgRaw&r=0" alt="Product Image"></td>
+                                                    <td>Product Name4<br>Category NameZ; Available: 18</td>
+                                                    <td>24.900đ</td>
+                                                    <td><input type="number" value="2"></td>
+                                                    <td>49.800đ</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <td><a href="ProductSellect.jsp" class="select-button">Select More Product</a></td>
+                                   
+                                        <div style="margin-left:  87%">
+                            <p>Sub Total: 3.150.800đ</p>
+                            <p>Shipping Fee: 25.000đ</p>
+                            <p><strong>Total: 3.175.800đ</strong></p>
                         </div>
+                                    </div><!-- /.selected-products -->
+                                </div><!-- /.order-container -->
+                            </div><!-- /.new-order -->
+                        </header><!-- /.panel-heading -->
+
+                        <!-- Additional section -->
+
+                       
                     </div>
+                    <section class="panel">
+                        <div class="row">
+                            <div class="container">
 
-                    <h2>Products</h2>
-                    <table class="table">
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Total</th>
-                        </tr>
-                        <tr>
-                            <td>Product 1</td>
-                            <td>1</td>
-                            <td>100,000₫</td>
-                            <td>100,000₫</td>
-                        </tr>
-                        <tr>
-                            <td>Product 2</td>
-                            <td>2</td>
-                            <td>50,000₫</td>
-                            <td>100,000₫</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" style="text-align: right;">Subtotal:</td>
-                            <td>200,000₫</td>
-                        </tr>
-                    </table>
-                  
+                                <table class="table table-hover" border="0">
+                                    <thead>
+                                        <tr>
+                                            <th><h2>Delivery Details</h2> 
+                                            </th>
+                                            <th> </th>
+                                            <th>
+                                                <h2> 
+                                                    Status: Shipping Status
+                                                </h2> </th>
+                                        </tr>
 
+                                    </thead>
+                                </table>
+                                <div class="form-group">
+                                    <label for="fullName">Full name*</label>
+                                    <input type="text" id="fullName" name="fullName" required>
+                                </div>
 
-                 
-                
+                                <div class="form-group-inline">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email">
+                                    </div>
 
-             <table>
-                        <tr>
-                            <th> <h2>Total Amount</h2>
+                                    <div class="form-group">
+                                        <label for="mobile">Mobile</label>
+                                        <input type="tel" id="mobile" name="mobile">
+                                    </div>
+                                </div>
 
-                        <table border="0">
-                            <tr>
-                                <td >Total Product Price:</td>
-                                <td>200,000₫</td>
-                            </tr>
-                            <tr>
-                                <td >Shipping Fee:</td>
-                                <td>36,000₫</td>
-                            </tr>
-                            <tr>
-                                <td >Tax:</td>
-                                <td>10,000₫</td>
-                            </tr>
-                            <tr>
-                                <td style="color: red">Total:</td>
-                                <td style="color: red">246,000₫</td>
-                            </tr>
-
-                        </table></div></th>
-                            <th>
-                    <div ><h2>Payment Method</h2>
-                        <table border="2">
-                            <tr>
-                                <td >Payment Method:</td>
-                                <td>Cash payment</td>
-                            </tr>
-                            <tr>
-                                <td >Payment Status:</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td >Payment Date:</td>
-                                <td>06/10/2024</td>
-                            </tr>
-                        </table>
-
-                    </div></th>
-                            <tr>
-                    </table >
-                    </div>
+                                <div class="form-group-inline">
+                                    <div class="form-group">
+                                        <label for="cityProvince">City/Province</label>
+                                        <select id="cityProvince" name="cityProvince">
+                                            <option value="">City/Province</option>
+                                            <!-- Add options here -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="district">District</label>
+                                        <select id="district" name="district">
+                                            <option value="">District</option>
+                                            <!-- Add options here -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="wards">Wards</label>
+                                        <select id="wards" name="wards">
+                                            <option value="">Wards</option>
+                                            <!-- Add options here -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" id="address" name="address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="deliveryNotes">Delivery Notes</label>
+                                    <textarea id="deliveryNotes" name="deliveryNotes"></textarea>
+                                </div>
 
 
-            </aside><!-- /.right-side -->
 
+                                <div class="payment-method">
+                                    <label>Payment Method:</label>
+                                    <label><input type="radio" name="paymentMethod" value="cash" checked> Cash Payment</label>
+                                    <label><input type="radio" name="paymentMethod" value="bank"> Bank Transfer</label>
+                                    <label><input type="radio" name="paymentMethod" value="internet"> Internet Banking</label>
+                                </div>
+                                <div class="order-status">
+                                    <label>Order Status:</label>
+                                    <label><input type="radio" name="orderStatus" value="verified" checked> Verified</label>
+                                    <label><input type="radio" name="orderStatus" value="paid"> Paid</label>
+                                    <label><input type="radio" name="orderStatus" value="shipping"> Shipping</label>
+                                    <label><input type="radio" name="orderStatus" value="shipped"> Shipped</label>
+                                </div>
+
+
+
+                                <button type="submit" class="submit-btn">Submit</button>
+                            </div>
+                        </div> 
+
+
+                    </section>
+
+
+
+                    <div><!-- /.row -->
+                </section><!-- /.content -->                         </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
+
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.min.js" type="text/javascript"></script>
+
         <!-- Bootstrap -->
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- Director App -->
