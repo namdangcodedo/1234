@@ -386,47 +386,38 @@
                                                                 <label class="py-3">
                                                                     <input type="checkbox" required="" class="d-inline">
                                                                     <span class="label-body">Remember me</span>
-                                                                    <span class="label-body"><a href="#" class="fw-bold">Forgot Password</a></span>
+                                                                    <span class="label-body"><a href="resetPasswordC.jsp" class="fw-bold">Forgot Password</a></span>
                                                                 </label>
-                                                                <button type="submit" name="submit" class="btn btn-dark w-100 my-3">Login</button>
+                                                                <a href="userProfile.jsp"><button type="submit" name="submit" class="btn btn-dark w-100 my-3">Login</button></a>
+                                                                <div class="text-center my-3">or</div>
+                                                                <button type="button" class="btn btn-dark w-100 my-3" >
+                                                                    <img src="https://img.icons8.com/color/16/000000/google-logo.png" class="me-2"> Sign in with Google
+                                                                </button>
+                                                                <button type="button" class="btn btn-dark w-100 my-3">
+                                                                    <img src="https://img.icons8.com/color/16/000000/facebook-new.png" class="me-2"> Sign in with Facebook
+                                                                </button>
                                                             </div>
                                                             <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
                                                                 <div class="form-group py-3">
-                                                                    <label class="mb-2" for="username">Your user name *</label>
-                                                                    <input type="text" minlength="2" name="username" placeholder="Your user name" class="form-control w-100 rounded-3 p-3" required>
+                                                                    <label class="mb-2" for="register">Your email address *</label>
+                                                                    <input type="text" minlength="2" name="username" placeholder="Your Email Address" class="form-control w-100 rounded-3 p-3" required>
                                                                 </div>
-
-                                                                <div class="form-group py-3">
-                                                                    <label class="mb-2" for="account">Your account *</label>
-                                                                    <input type="text" minlength="2" name="account" placeholder="Your account" class="form-control w-100 rounded-3 p-3" required>
-                                                                </div>
-
-                                                                <div class="form-group py-3">
-                                                                    <label class="mb-2" for="email">Your email address *</label>
-                                                                    <input type="email" minlength="2" name="email" placeholder="Your email address" class="form-control w-100 rounded-3 p-3" required>
-                                                                </div>
-
-                                                                <div class="form-group py-3">
-                                                                    <label class="mb-2" for="phone">Your phone number *</label>
-                                                                    <input type="tel" minlength="2" name="phone" placeholder="Your phone number" class="form-control w-100 rounded-3 p-3" required>
-                                                                </div>
-
-                                                                <div class="form-group py-3">
-                                                                    <label class="mb-2" for="address">Your address *</label>
-                                                                    <input type="text" minlength="2" name="address" placeholder="Your address" class="form-control w-100 rounded-3 p-3" required>
-                                                                </div>
-
-                                                                <div class="form-group py-3">
-                                                                    <label class="mb-2" for="password">Password *</label>
-                                                                    <input type="password" minlength="2" name="password" placeholder="Password" class="form-control w-100 rounded-3 p-3" required>
-                                                                </div>
-
                                                                 <div class="form-group pb-3">
-                                                                    <label class="mb-2" for="confirm-password">Password again *</label>
-                                                                    <input type="password" minlength="2" name="confirm-password" placeholder="Password again" class="form-control w-100 rounded-3 p-3" required>
+                                                                    <label class="mb-2" for="sign-in">Password *</label>
+                                                                    <input type="password" minlength="2" name="password" placeholder="Your Password" class="form-control w-100 rounded-3 p-3" required>
                                                                 </div>
-
+                                                                <label class="py-3">
+                                                                    <input type="checkbox" required="" class="d-inline">
+                                                                    <span class="label-body">I agree to the <a href="#" class="fw-bold">Privacy Policy</a></span>
+                                                                </label>
                                                                 <button type="submit" name="submit" class="btn btn-dark w-100 my-3">Register</button>
+                                                                <div class="text-center my-3">or</div>
+                                                                <button type="button" class="btn btn-dark w-100 my-3">
+                                                                    <img src="https://img.icons8.com/color/16/000000/google-logo.png" class="me-2"> Register with Google
+                                                                </button>
+                                                                <button type="button" class="btn btn-dark w-100 my-3">
+                                                                    <img src="https://img.icons8.com/color/16/000000/facebook-new.png" class="me-2"> Register with Facebook
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
