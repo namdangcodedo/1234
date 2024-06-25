@@ -292,7 +292,7 @@
                                 <a class="nav-link me-4" href="blog.html">Blogs</a>
                             </li>
                             <li class="nav-item">
-                                 <a href="Views/admin/DashBoard.jsp" onclick="goToPage(1)">Admin</a>
+                                 <a href="/web/dashboardProduct.jsp" onclick="goToPage(1)">Admin</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link me-4 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pages</a>
