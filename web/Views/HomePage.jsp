@@ -556,14 +556,14 @@
                         <div class="row d-flex flex-column-reverse flex-md-row align-items-center">
                             <div class="col-md-5 offset-md-1 mt-5 mt-md-0 text-center text-md-start">
                                 <div class="banner-content">
-                                    <h2>How Innovation works</h2>
+                                    <h2>Meo Meo Meo Meo</h2>
                                     <p>Discount available. Grab it now!</p>
                                     <a href="shop.html" class="btn mt-3">Shop Product</a>
                                 </div>
                             </div>
                             <div class="col-md-6 text-center">
                                 <div class="image-holder">
-                                    <img src="images/banner-image1.png" class="img-fluid" alt="banner">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkJiPD_Kbk4hUmkvhUZKgeXLXd5ZarycuOig&s" class="img-fluid" alt="banner">
                                 </div>
                             </div>
                         </div>
@@ -574,14 +574,14 @@
                         <div class="row d-flex flex-column-reverse flex-md-row align-items-center">
                             <div class="col-md-5 offset-md-1 mt-5 mt-md-0 text-center text-md-start">
                                 <div class="banner-content">
-                                    <h2>Your Heart is the Sea</h2>
+                                    <h2>Mi Mi Mi Mi</h2>
                                     <p>Limited stocks available. Grab it now!</p>
                                     <a href="shop.html" class="btn mt-3">Shop Collection</a>
                                 </div>
                             </div>
                             <div class="col-md-6 text-center">
                                 <div class="image-holder">
-                                    <img src="images/banner-image.png" class="img-fluid" alt="banner">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkJiPD_Kbk4hUmkvhUZKgeXLXd5ZarycuOig&s" class="img-fluid" alt="banner">
                                 </div>
                             </div>
                         </div>
